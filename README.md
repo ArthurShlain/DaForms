@@ -33,7 +33,7 @@ da_forms::load_form(
   )
 ));
 ```
-[See full example](forms/question.php)
+See [full example](forms/question.php)
 
 ### Making validation rules
 
