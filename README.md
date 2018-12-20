@@ -17,3 +17,19 @@ Add client script (jQuery required)
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="inc/da-forms/da-forms.js"></script>
 ```
+
+### Making new forms
+
+For example, create `question.php` file in `forms` directory and paste this code:
+```php
+da_forms::load_form(
+  array(
+    'files' => false,
+    'ajax' => true,
+    'validation_helper' => false,
+    'fields' => array(),
+    'messages' => array(),
+    'actions' => array()
+  )
+));
+```
