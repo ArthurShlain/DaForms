@@ -34,3 +34,9 @@ da_forms::load_form(
 ));
 ```
 [See full example](forms/question.php)
+
+### Making validation rules
+
+Validation rule files located in `validation` directory.
+
+See [available validation rules](validation)
