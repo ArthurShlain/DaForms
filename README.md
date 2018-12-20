@@ -33,6 +33,14 @@ da_forms::load_form(
   )
 ));
 ```
+
+- **files** (true/false) - if true, param `enctype="multipart/form-data"` will be added to the `<form>` element.
+- **ajax** (true/false) - if true, ajax will be used to submit the form
+- **validation_helper** (true/false) - if true, error description text will be added below the fields
+- **fields** (array) - array of form fields
+- **messages** (array) - array of form messages strings
+- **actions** (array) - array of form actions
+
 See [full example](forms/question.php)
 
 ### Making validation rules
