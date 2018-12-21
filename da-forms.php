@@ -777,6 +777,14 @@ class da_forms
         foreach (da_forms::$forms[$form_name]['fields'] as $field_id => $field_options) {
             $form_body = str_replace('%' . $field_id . '%', da_forms::get_field($form_options, $field_options), $form_body);
         }
+        
+        // Search and replace %something% in form body with form options, first level array items only
+        foreach (da_forms::$forms[$form_name] as $param_name => $param_value){
+            if(is_string($param_value)){
+                $form_body = str_replace('%' . $param_name . '%', $param_value, $form_body);
+            }
+        }
+        
         $html .= $form_body;
         $html .= '</form>';
         // Remove "flashed" form data from session
