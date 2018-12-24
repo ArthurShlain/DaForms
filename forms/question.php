@@ -83,6 +83,12 @@ if (method_exists('da_forms', 'load_form')) {
             'tel.invalid' => 'Wrong phone number'
         ),
         'actions' => array(
+            // Clean extra characters from phone number
+            'prepare_example' => array(
+                'type' => 'prepare',
+                'tel' => '%tel%',
+            ),
+            // Send mail using PHPMailer
             'mail_example' => array(
                 'type' => 'mail',
 
