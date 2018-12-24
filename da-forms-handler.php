@@ -71,7 +71,7 @@ if(empty($data['errors']) && !empty($form_actions)){
         $action_type = @$action['type'];
         $action_json = json_encode($action);
         $action_json = da_forms::compile_string($action_json, $data['values']);
-        $action = json_decode($action_json, true);
+        $action_data = json_decode($action_json, true);
         $action_file = 'actions/' . $action_type . '.php';
         if(file_exists($action_file)){
             /** @noinspection PhpIncludeInspection */
@@ -79,7 +79,7 @@ if(empty($data['errors']) && !empty($form_actions)){
         }
         $function_name = 'action_' . $action_type;
         if(function_exists($function_name)) {
-            $action_result = $function_name($action);
+            $action_result = $function_name($action_data);
             if(!empty($action_result['errors'])){
                 $data['form_errors'] = array_merge($data['form_errors'], $action_result['errors']);
             }
