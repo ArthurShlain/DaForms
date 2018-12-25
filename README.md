@@ -4,7 +4,10 @@ PHP Forms Framework
 ## Using
 
 Loading init file:
-<code>require 'da-forms-init.php';</code>
+
+```php
+require 'da-forms-init.php';
+```
 
 Call form with name "question":
 ```php 
