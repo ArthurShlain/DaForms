@@ -29,7 +29,7 @@ Add client script (jQuery required)
 <script src="inc/da-forms/da-forms.js"></script>
 ```
 
-### Making new forms
+### Adding new forms
 
 For example, create `question.php` file in `forms` directory and paste this code:
 ```php
@@ -54,7 +54,7 @@ da_forms::load_form(
 
 See [full example](forms/question.php)
 
-### Making validation rules
+### Adding validation rules
 
 Validation rule files located in `validation` directory.
 
@@ -83,7 +83,7 @@ function da_form_validation_email($value, $options, $field, $fields){
 
 See [available validation rules](validation)
 
-### Making actions
+### Adding actions
 
 Actions is a tasks doing after form submit.
 Actions located in `actions` directory.
