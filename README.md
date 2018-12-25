@@ -1,6 +1,14 @@
 # DaForms
 PHP Forms Framework
 
+## Features
+
+- Generating html forms from array;
+- Customization for any HTML/CSS framework;
+- Form validation on backend;
+- Ajax support;
+- Ability to describe actions on form submit.
+
 ## Using
 
 Loading init file:
