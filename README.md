@@ -71,3 +71,43 @@ function da_form_validation_email($value, $options, $field, $fields){
 ```
 
 See [available validation rules](validation)
+
+### Making actions
+
+Actions is a tasks doing after form submit.
+Actions located in `actions` directory.
+
+Example with removing extra characters from phone number:
+
+```php
+/**
+ * @param $data
+ * @return array
+ */
+function action_prepare($data)
+{
+    $data['tel'] = preg_replace('/[^0-9]/', '', $data['tel']);
+
+    return array(
+        'values' => array(
+            'tel' => $data['tel']
+        )
+    );
+}
+```
+
+Input `$data` array can be specified in form settings:
+
+```php
+da_forms::load_form(array(
+  'ajax' => true,
+  'fields' => array(),
+  'actions' => array(
+    'prepare_example' => array(
+        'type' => 'prepare',
+        'tel' => ' %tel%',
+    ),
+    'errors' => array()
+  )
+));
+```
