@@ -731,7 +731,7 @@ class da_forms
             }
         }
         $_SESSION['da_forms_options_override_' . $form_name . '_' . $form_instance] = $options_override;
-        da_forms::$forms[$form_name] = array_replace(@da_forms::$forms[$form_name], $options_override);
+        da_forms::$forms[$form_name] = array_replace_recursive(@da_forms::$forms[$form_name], $options_override);
         $form_options = da_forms::get_form_defaults(da_forms::$forms[$form_name]);
         $form_attributes = array();
         $form_attributes['action'] = da_forms::get_da_forms_dir() . '/' . da_forms::$handler . '#form_' . $form_name;
