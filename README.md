@@ -4,7 +4,7 @@ PHP Forms Framework
 ## Features
 
 - Generating html forms from array;
-- Customization for any HTML/CSS framework;
+- Compatible with Bootstrap Framework;
 - Form validation on backend;
 - Ajax support;
 - Ability to describe actions on form submit.
