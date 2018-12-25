@@ -66,7 +66,7 @@ foreach ($form_fields as $field){
     }
 }
 
-$data['errors'] = array_merge($data['errors'], $validation_errors);
+$data['errors'] = array_replace_recursive($data['errors'], $validation_errors);
 
 if(empty($data['errors']) && !empty($form_actions)){
     foreach ($form_actions as $action){
@@ -87,10 +87,10 @@ if(empty($data['errors']) && !empty($form_actions)){
         if(function_exists($function_name)) {
             $action_result = $function_name($action_data);
             if(!empty($action_result['errors'])){
-                $data['form_errors'] = array_merge($data['form_errors'], $action_result['errors']);
+                $data['form_errors'] = array_replace_recursive($data['form_errors'], $action_result['errors']);
             }
             if(!empty($action_result['values'])){
-                $data['values'] = array_merge($data['values'], $action_result['values']);
+                $data['values'] = array_replace_recursive($data['values'], $action_result['values']);
             }
         }
         else {
