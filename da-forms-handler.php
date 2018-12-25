@@ -30,6 +30,12 @@ if (empty(da_forms::$forms[$form_name])) {
     $data['form_errors']['form_not_found'] = 'Форма не найдена.';
 }
 
+$options_override = array();
+if(!empty($_SESSION['da_forms_options_override_' . $form_name . '_' . $form_instance])){
+    $options_override = $_SESSION['da_forms_options_override_' . $form_name . '_' . $form_instance];
+}
+da_forms::$forms[$form_name] = array_replace_recursive(@da_forms::$forms[$form_name], $options_override);
+
 $form_settings = @da_forms::$forms[$form_name];
 $form_messages = @da_forms::$forms[$form_name]['messages'];
 $form_fields = @da_forms::$forms[$form_name]['fields'];
