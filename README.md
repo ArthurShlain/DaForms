@@ -53,7 +53,9 @@ da_forms::load_form(
 - **actions** (array) - array of form actions
 
 See [full example](forms/question.php)
+
 [Bootstrap 3](forms/bs3_example.php) form example
+
 [Bootstrap 4](forms/bs4_example.php) form example
 
 ### Adding validation rules
