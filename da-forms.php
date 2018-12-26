@@ -763,9 +763,9 @@ class da_forms
             );
         }
         $form_template = @da_forms::$forms[$form_name]['template'];
-        if (strpos($form_template, '%form_errors%') === false) {
+        /*if (strpos($form_template, '%form_errors%') === false) {
             $form_template .= ' %form_errors%';
-        }
+        }*/
         $form_body = $form_template;
         if (empty(@da_forms::$forms[$form_name]['template'])) {
             if (!empty(@da_forms::$forms[$form_name]['fields'])) {
