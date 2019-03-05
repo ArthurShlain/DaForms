@@ -475,6 +475,10 @@ class da_forms
         $label_attributes['class'] = @$field['label_class'];
         $radio_values = @$field['radio_values'];
         $selected_value = @$field['selected_value'];
+        if (!empty($form_data['errors'][@$field['name']])) {
+            $wrapper_attributes['class'] .= ' has-error';
+            $input_attributes['class'] .= ' is-invalid';
+        }
         $html = '';
         $i = 0;
         foreach ($radio_values as $radio_value => $radio_text) {
