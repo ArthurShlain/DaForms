@@ -462,6 +462,7 @@ class da_forms
     {
         $field = self::get_control_defaults($form, $field);
         $template = @$field['field_template'];
+        $form_data = @$_SESSION['da_forms_data'][$form['name']];
         $wrapper_tag = @$field['wrapper_tag'];
         $wrapper_attributes = array();
         $wrapper_attributes['class'] = @$field['wrapper_class'];
@@ -479,6 +480,10 @@ class da_forms
         foreach ($radio_values as $radio_value => $radio_text) {
             $i++;
             $radio_id = @$form['name'] . '_' . @$form['instance'] . '_' . @$field['id'] . '_' . md5($radio_value);
+            $checked = @$form_data['values'][@$field['name']] === $radio_value;
+            if($checked){
+                $input_attributes['checked'] = 'checked';
+            }
             $parts = array();
             $parts['start'] = '<' . $wrapper_tag . ' ' . da_forms::array_to_attributes($wrapper_attributes) . '>';
             $parts['end'] = '</' . $wrapper_tag . '>';
