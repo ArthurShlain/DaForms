@@ -1,5 +1,6 @@
 # DaForms
-PHP Forms Framework
+
+This project is abandoned.
 
 ## Features
 
